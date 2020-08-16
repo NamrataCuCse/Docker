@@ -52,7 +52,7 @@ Commands:
 #### Check Network Status
 ```bash
 sudo docker container inspect --format '{{.NetworkSettings.IPAddress}}' webhost
- sudo docker network ls  #show networks
+sudo docker network ls  #show networks
 ```
 #### Create new Network
 ```bash
