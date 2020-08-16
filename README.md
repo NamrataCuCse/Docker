@@ -60,11 +60,11 @@ sudo docker network create my-net
 ```
 Network driver provides extension for virtual network.
 
-### Create new Image with given Network
+#### Create new Image with given Network
 ```bash
 sudo docker container run -d --name new_nginx --network my-net nginx
 ```
-### Inspect the Network 
+#### Inspect the Network 
 ```bash 
 sudo docker network inspect my-net
 ```
@@ -72,3 +72,67 @@ New nginx is added.
 
 
 ## Docker Image
+An image is an ordered collection of root filesystem changes and the corresponding execution parameters for use within a container runtime.
+Repositories - https://github.com/docker-library/official-images
+             		https://hub.docker.com/
+Download different version than the latest
+```bash
+sudo docker pull nginx:1.11.9
+```
+Docker image history shows layers of changes made in image.
+```bash
+sudo docker history nginx:\latest
+```
+Image Tagging and Pushing to Docker Hub. Assign one or more tags to an image.
+```bash
+sudo docker image tag nginx <tagname/nginx>
+sudo docker login
+sudo docker image push <tagname/nginx>
+```
+
+
+## Build Your Own Dockerfile and Run Container
+
+1. Write the script inside dockerfile for building images:
+``bash 
+vim dockerfile
+```
+
+2. Tag the image:
+
+```bash
+sudo docker build -t testnode .
+```
+Where
+-t == tag
+. = current directory
+
+3. Run the image:
+```bash
+sudo docker container run --rm -p 80:3000 testnode
+```
+4. Upload to dockerhub:
+```bash
+sudo docker tag testnode namratacucse/test-node
+sudo docker push namratacucse/test-node
+```
+5.Remove the image (optional):
+```bash
+sudo docker image rm namratacucse/test-node
+```
+6.To restart again (optional):
+```bash
+sudo docker container run --rm -p 80:3000 namratacucse/test-node
+```
+Goto localhost.
+
+## Prune to Keep Docker System Clean
+You can use "prune" commands to clean up images, volumes, build cache, and containers. 
+1. Clean up just "dangling" images ***docker image prune***
+2. Clean up everything docker ***system prune***
+
+## Stop and remove all docker containers and images
+1. List all containers (only IDs) ***docker ps -aq***
+2. Stop all running containers ***docker stop $(docker ps -aq)***
+3.Remove all containers  ***docker rm $(docker ps -aq)***
+4.Remove all images ***docker rmi $(docker images -q)***
