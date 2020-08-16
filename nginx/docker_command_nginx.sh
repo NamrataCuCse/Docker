@@ -36,6 +36,9 @@ read conid
 sudo docker tag $conid mom
 echo "Create Images With Tags"
 sudo docker commit nginx_base mom
+echo "Create a new container based on the image we just created and start it using"
+sudo docker run --name himom -d -p 80:80 mom
+
 
 #Delete the Original Container
 echo "Delete container"
