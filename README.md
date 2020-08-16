@@ -7,9 +7,9 @@ sudo docker start nginx_base
 ```
 Parameters:
 1. -p == --publish the port
-2. -d == --detach tells docker to run the image it the background
+2. -d == --detach tells docker to run the image it the background.
 By running in detached mode, we are able to have access to our command line when the container spins up and runs. Without it, we would have logs constantly fed onto the screen.
-3. -e -> environment variable
+3. -e -> environment variable.
 Once you run the command, you will get output if you browse to the URL http://dockerhost:8080.
 
 
