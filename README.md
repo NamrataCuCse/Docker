@@ -134,5 +134,5 @@ You can use "prune" commands to clean up images, volumes, build cache, and conta
 ## Stop and remove all docker containers and images
 1. List all containers (only IDs) ***docker ps -aq***
 2. Stop all running containers ***docker stop $(docker ps -aq)***
-3.Remove all containers  ***docker rm $(docker ps -aq)***
-4.Remove all images ***docker rmi $(docker images -q)***
+3. Remove all containers  ***docker rm $(docker ps -aq)***
+4. Remove all images ***docker rmi $(docker images -q)***
