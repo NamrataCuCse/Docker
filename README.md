@@ -49,12 +49,12 @@ Commands:
 4. Attach a network to container **docker network connect**
 5. Detach a network from container **docker network disconnect**
 
-### Check Network Status
+#### Check Network Status
 ```bash
 sudo docker container inspect --format '{{.NetworkSettings.IPAddress}}' webhost
  sudo docker network ls  #show networks
 ```
-### Create new Network
+#### Create new Network
 ```bash
 sudo docker network create my-net
 ```
