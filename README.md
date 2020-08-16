@@ -94,7 +94,8 @@ sudo docker image push <tagname/nginx>
 ## Build Your Own Dockerfile and Run Container
 
 1. Write the script inside dockerfile for building images:
-``bash 
+
+```bash 
 vim dockerfile
 ```
 
