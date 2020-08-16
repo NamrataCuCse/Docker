@@ -43,11 +43,11 @@ sudo docker top <container name>
 
 ## Docker Network
 Commands: 
-1. Show network **docker network ls**
-2. Inspect network **docker network inspect**
-3. Create network **docker network create --driver**
-4. Attach a network to container **docker network connect**
-5. Detach a network from container **docker network disconnect**
+1. Show network:  ***docker network ls***
+2. Inspect network:  ***docker network inspect***
+3. Create network:  ***docker network create --driver***
+4. Attach a network to container:  ***docker network connect***
+5. Detach a network from container:  ***docker network disconnect***
 
 #### Check Network Status
 ```bash
@@ -127,12 +127,12 @@ sudo docker container run --rm -p 80:3000 namratacucse/test-node
 Goto localhost.
 
 ## Prune to Keep Docker System Clean
-You can use "prune" commands to clean up images, volumes, build cache, and containers. 
-1. Clean up just "dangling" images ***docker image prune***
-2. Clean up everything docker ***system prune***
+You can use "prune" commands to clean up images, volumes, build cache, and containers.
+1. Clean up just "dangling" images: ***docker image prune***
+2. Clean up everything docker:  ***system prune***
 
 ## Stop and remove all docker containers and images
-1. List all containers (only IDs) ***docker ps -aq***
-2. Stop all running containers ***docker stop $(docker ps -aq)***
-3. Remove all containers  ***docker rm $(docker ps -aq)***
-4. Remove all images ***docker rmi $(docker images -q)***
+1. List all containers (only IDs):  ***docker ps -aq***
+2. Stop all running containers:  ***docker stop $(docker ps -aq)***
+3. Remove all containers:   ***docker rm $(docker ps -aq)***
+4. Remove all images:  ***docker rmi $(docker images -q)***
