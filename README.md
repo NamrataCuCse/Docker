@@ -27,7 +27,7 @@ sudo docker container ls -a
 Parameter:
 1. -a = active
 
-## Remove a container
+## Remove a Container
 ```bahs
 sudo docker container stop <container id>
 sudo docker rm <container id>
@@ -36,7 +36,39 @@ Force remove
 ```bash
 sudo docker rm -f <container id>
 ```
-## Get list of processes running inside a docker container
+## Get list of processes running inside a Docker Container
 ```bash
 sudo docker top <container name>
 ```
+
+## Docker Network
+Commands: 
+1. Show network **docker network ls**
+2. Inspect network **docker network inspect**
+3. Create network **docker network create --driver**
+4. Attach a network to container **docker network connect**
+5. Detach a network from container **docker network disconnect**
+
+### Check Network Status
+```bash
+sudo docker container inspect --format '{{.NetworkSettings.IPAddress}}' webhost
+ sudo docker network ls  #show networks
+```
+### Create new Network
+```bash
+sudo docker network create my-net
+```
+Network driver provides extension for virtual network.
+
+### Create new Image with given Network
+```bash
+sudo docker container run -d --name new_nginx --network my-net nginx
+```
+### Inspect the Network 
+```bash 
+sudo docker network inspect my-net
+```
+New nginx is added.
+
+
+## Docker Image
