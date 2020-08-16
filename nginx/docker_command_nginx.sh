@@ -44,3 +44,8 @@ sudo docker run --name himom -d -p 80:80 mom
 echo "Delete container"
 sudo docker ps
 sudo docker container stop $conid
+
+
+#Create a new container based on the image we just created and start it using
+echo "Run new Docker image"
+sudo docker run --name himom -d -p 80:80 mom
