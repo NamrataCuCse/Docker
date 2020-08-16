@@ -28,7 +28,7 @@ Parameter:
 1. -a = active
 
 ## Remove a Container
-```bahs
+```bash
 sudo docker container stop <container id>
 sudo docker rm <container id>
 ```
